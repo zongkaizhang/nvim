@@ -34,7 +34,7 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim")
 
   -- preferred colorscheme
-  use("bluz71/vim-nightfly-guicolors")
+  use("bluz71/vim-nightfly-colors")
 
   -- commenting with gc
   use("numToStr/Comment.nvim")
@@ -73,4 +73,14 @@ return packer.startup(function(use)
   -- managing & installing lsp servers, linters & formatters
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+
+  -- treesitter configuration
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+  })
+
 end)
