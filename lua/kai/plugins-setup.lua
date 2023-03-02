@@ -53,9 +53,17 @@ return packer.startup(function(use)
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
   -- autocompletion
-  use("hrsh7th/nvim-cmp") -- completion plugin
-  use("hrsh7th/cmp-buffer") -- source for text in buffer
-  use("hrsh7th/cmp-path") -- source for file system paths
+  use("hrsh7th/nvim-cmp")       -- completion plugin
+  use("hrsh7th/cmp-buffer")     -- source for text in buffer
+  use("hrsh7th/cmp-path")       -- source for file system paths
+  use("hrsh7th/cmp-cmdline")    -- source for cmdline
+  use("hrsh7th/cmp-nvim-lsp")
+  -- vsnip
+  use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
+  use 'hrsh7th/vim-vsnip'
+  use 'rafamadriz/friendly-snippets'
+  -- lspkind
+  use 'onsails/lspkind-nvim'
 
   -- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
